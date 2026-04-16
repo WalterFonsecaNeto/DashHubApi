@@ -1,0 +1,23 @@
+@DashHubApi_HostAddress = http://localhost:5263
+@ContentType = application/json
+
+# Autenticação
+
+### Registrar novo usuário
+POST {{DashHubApi_HostAddress}}/autenticacao/registrar
+Content-Type: {{ContentType}}
+
+{
+  "nome": "João Silva",
+  "email": "joao@example.com",
+  "senha": "senha123"
+}
+
+### Entrar na aplicação
+POST {{DashHubApi_HostAddress}}/autenticacao/entrar
+Content-Type: {{ContentType}}
+
+{
+  "email": "joao@example.com",
+  "senha": "senha123"
+}
