@@ -43,3 +43,4 @@ Thumbs.db
 .config/dotnet-tools.json
 src/appsettings.Development.json
 InfoLocal.md
+EASYPANEL-DEPLOY.md

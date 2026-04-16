@@ -18,7 +18,7 @@ builder.Services.AdicionarServicosAplicacao();
 var app = builder.Build();
 
 // Configuração do Pipeline
-app.UsarConfiguracaoDesenvolvimento();
+app.UsarConfiguracaoSwagger();
 app.UsarMiddlewareAplicacao();
 app.MapControllers();
 

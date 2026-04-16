@@ -6,11 +6,14 @@ namespace DashHubApi.Extensions;
 public static class WebApplicationExtensions
 {
     /// <summary>
-    /// Configura o pipeline de desenvolvimento (Swagger e ferramentas de debug)
+    /// Configura o Swagger conforme ambiente ou chave de configuracao.
     /// </summary>
-    public static WebApplication UsarConfiguracaoDesenvolvimento(this WebApplication app)
+    public static WebApplication UsarConfiguracaoSwagger(this WebApplication app)
     {
-        if (app.Environment.IsDevelopment())
+        var swaggerHabilitado = app.Configuration.GetValue<bool?>("Swagger:Enabled")
+            ?? app.Environment.IsDevelopment();
+
+        if (swaggerHabilitado)
         {
             app.UseSwagger();
             app.UseSwaggerUI();
